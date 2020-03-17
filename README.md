@@ -111,17 +111,17 @@ Al hacer `git push ` __Persona A__ verá que hay un conflicto como pasó en la p
    Por lo tanto el código que aparecerá ahí será la versión del código de la rama remota. En este caso sería el código que subió __Persona B__.
    El número largo que aparecerá es el identificador del último commit remoto. 
    
-   Git hace esto para mostrarnos las dos versiones del código y que la persona que esté desarrollando pueda decidir cuál será la versión definitiva. 
+   > Git hace esto para mostrarnos las dos versiones del código y que la persona que esté desarrollando pueda decidir cuál será la versión definitiva. 
    Hay que tener cuidado al hacer este procedimiento porque podríamos eliminar trabajo de otras personas. 
    
 6. __Persona A__ decidirá que quiere dejar su versión y no la de su pareja, por lo que eliminará todo el código que Git agregó incluyendo los símbolos <, HEAD e identificadores de commit. 
 Viendo los códigos del punto 5 debería quedar solo <codigo local>. 
   
 7. Finalmente __Persona A__ deberá subir el resultado del merge. Para eso se debe: 
-    + Volver a agregar los archivos modificados durante el merge (`git add todolist/templates/index.html`) 
-    + `git commit` para hacer commit del merge. Aquí no es necesario poner -m y un mensaje por estar haciendo merge. 
+    + Volver a agregar los archivos modificados durante el merge haciendo `git add todolist/templates/index.html` 
+    + `git commit` para hacer commit del merge. Aquí no es necesario poner -m y un mensaje porque se está haciendo merge. 
     + `git push` para terminar de subir los cambios locales y el arreglo de los conflictos. 
     
 Si revisan los commits en github verán que se crearon dos commits. Un commit por hacer merge de la rama remota y la local y otro commit que representa los cambios que hizo __Persona A__. 
-Lo bueno de esto que es que si hay problemas al momento de resolver los conflictos, se podrá volver a una versión anterior del código. 
+> Lo bueno de esto que es que si hay problemas al momento de resolver los conflictos, se podrá volver a una versión anterior del código. 
 
