@@ -115,7 +115,7 @@ Al hacer `git push ` __Persona A__ verá que hay un conflicto como pasó en la p
    Hay que tener cuidado al hacer este procedimiento porque podríamos eliminar trabajo de otras personas. 
    
 6. __Persona A__ decidirá que quiere dejar su versión y no la de su pareja, por lo que eliminará todo el código que Git agregó incluyendo los símbolos <, HEAD e identificadores de commit. 
-Viendo los códigos del punto 5 debería quedar solo <codigo local>. 
+Viendo los códigos del punto 5 debería quedar solo `<codigo local>`. 
   
 7. Finalmente __Persona A__ deberá subir el resultado del merge. Para eso se debe: 
     + Volver a agregar los archivos modificados durante el merge haciendo `git add todolist/templates/index.html` 
