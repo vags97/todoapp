@@ -5,27 +5,47 @@ En esta actividad vamos a aprender conceptos de control de versiones con Git, si
 Esta es una app simple hecha en Django sacada de https://Github.com/CITGuru/todoapp. 
 La app es una TODO list donde pueden agregar tareas, ponerles categoría y fecha de término. 
 La versión de este repositorio no tiene la opción de eliminar una tarea, por lo tanto trabajarán en parejas para agregar esta funcionalidad. 
+
 ![App antes de la actividad](app-sin-eliminar.png)
+
+_Al final del README están las instrucciones de como correr el proyecto. Se recomienda seguir los pasos y cuando te digamos, recién correr la app._ 
+>Para usar git necesitarán una consola que tenga git. En Windows pueden descargar git bash y en linux y mac pueden instalar git directo en la terminal. 
+
+> Para editar los archivos pueden usar su editor de texto favorito. Algunos recomendados son [Sublime](https://www.sublimetext.com/3), [VS code](https://code.visualstudio.com/), [Pycharm](https://www.jetbrains.com/pycharm/) o [Notepad ++](https://notepad-plus-plus.org/). Varios de estos traen opciones para usar git desde el mismo editor y evitarse usar la consola. 
+> Para esta actividad les recomendamos escribir los comandos y seguir todos los pasos para entender la base de git y luego en el proyecto pueden decidir si usar la consola o una interfaz. 
+>  
 ## Actividad 
 
 ### [Parte 1: Fork del proyecto]
 Hoy trabajarán todxs sobre el mismo código base, pero deberán hacer una copia de este código en su repositorio personal, para que los cambios no afecten a otras parejas. 
 
-Para esto **UNA persona** de la pareja debería hacer un "fork" de este repositorio. 
-En Github deben hacer click arriba a la derecha donde dice Fork y seguir las instrucciones. 
-![alt text](github-fork.png "Repo base")
+Para esto **UNA persona** de la pareja deberá hacer un "Fork" de este repositorio. 
+1. En Github deben hacer click arriba a la derecha donde dice Fork y seguir las instrucciones. 
+![Fork en github](github-fork.png "Repo base")
 
-Al hacer Fork deberían tener un repo como el de la imagen y en vez de llamarse _flouMicaza/todoapp_ debería decir _nombreusuario/todoapp_.
+    Al hacer Fork deberían tener un repo como el de la imagen y en vez de llamarse _flouMicaza/todoapp_ debería decir _nombreusuario/todoapp_.
 
-Desde ahora los cambios que hagan en el nuevo repositorio no afectarán el repositorio de sus compañerxs ni el repositorio original.
+    Desde ahora los cambios que hagan en el nuevo repositorio no afectarán el repositorio de sus compañerxs ni el repositorio original.
 
+2. La persona que creó el repositorio deberá darle acceso a su pareja como colaborador. Para esto deberán ir a settings en la barra superior del repositorio (como en la imagen) 
+![Settings en github](settings-repo.png)
+    Luego ir a _manage access_ y seleccionar _Invite a collaborator_. Ahí se deberá ingresar la cuenta de github de la pareja y la pareja deberá aceptar la invitación por mail o a través del link de invitación. 
+    
+    > Es importante que todos los miembros del equipo sean colaboradores del repositorio, porque esto les da el poder de hacer modificaciones al proyecto. 
+    Si un usuario no es colaborador del proyecto al querer hacer push saldría un error de autenticación. 
+    Para proyectos abiertos en los que cualquier usuario puede colaborar existe una opción llamada "Pull request". 
+    Esto permite que un usuario o usuaria que no es colaborador pueda sugerir un cambio y las personas que si son colaboradoras deciden si se agregan o no los cambios al proyecto. 
+    Mas info: [¿Qué es un pull request?](http://aprendegit.com/que-es-un-pull-request/) 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 ### [Parte 2: Clonar el proyecto] 
 Desde ahora en adelante la persona que hizo el Fork será _"Persona A"_ y la otra persona de la pareja será _"Persona B_.
 Para poder trabajar, cada unx deberá clonar el proyecto en su computador siguiente los siguientes pasos: 
 1. Copiar el enlace del repositorio donde dice "Clone or download" ![Clone or download](clone-dowload.png)
-2. Clonar el repositorio en la consola de Git:  `git clone https://url...` 
+2. Clonar el repositorio en la consola de Git:  `git clone https://url...` (_Escoger https y no ssh_)
+> Si quieren leer las diferencias entre clonar con SSH y HTTPS : [Protocolos de git](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols) , [Conectar Github por ssh](https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
 
-> La versión del proyecto que encontramos en github se llama repositorio __remoto__ y la versión que está en nuestro computador se llamará local. 
+> La versión del proyecto que encontramos en github se llama repositorio __remoto__ y la versión que está en nuestro computador se llamará __local__. 
 
 ### [Parte 3: Editar el proyecto]
 En este paso cada integrante del grupo hará un cambio en el proyecto, que no afectará el trabajo del otro y luego ambos descargarán los cambios. 
@@ -125,3 +145,23 @@ Viendo los códigos del punto 5 debería quedar solo `<codigo local>`.
 Si revisan los commits en github verán que se crearon dos commits. Un commit por hacer merge de la rama remota y la local y otro commit que representa los cambios que hizo __Persona A__. 
 > Lo bueno de esto que es que si hay problemas al momento de resolver los conflictos, se podrá volver a una versión anterior del código. 
 
+### Más información sobre Git
+En esta actividad vimos una manera muy simplificada de usar git, que será suficiente para el proyecto del curso. 
+En proyectos mas grandes donde se tienen varias versiones del proyecto, un servidor con una versión oficial, un servidor con pruebas y mucha gente trabajando, el uso de git se vuelve mas complejo. 
+Para solucionar esto hay varias estrategias en las que se usan las [ramas de git o "branches"](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) para dividir las diferentes versiones del código y el trabajo en progreso. 
+Una de estas estrategias es git flow y podrás encontrar más información [aquí](http://aprendegit.com/que-es-git-flow/).
+Muchas veces las empresas y organizaciones definen su propio flujo según la forma en que están organizadas, pero guiándose por git flow.  
+
+## ¿Cómo ejecuto la app en mi computador? 
+Sigue los siguientes pasos en orden y deberías tener una todolist corriendo en tu localhost. 
+Estas instrucciones están hechas para correr el proyecto desde la consola, una vez que ya lo clonaste. 
+
+__No importa que no entiendas los pasos, aprenderemos como funciona Django en otra clase auxiliar__ 
+1. Desde la consola entra a la carpeta del proyecto todoapp. Deberías ver algo como esto: `user@pc:~/ruta/al/repo/todoapp$ `
+2. Deberás crear un ambiente virtual para correr el proyecto. Al trabajar con proyectos de python es importante tener siempre ambientes virtuales. 
+Para crear el ambiente virtual sigue [estas instrucciones](https://tutorial.djangogirls.org/es/django_installation/). 
+Atención que en este caso el proyecto ya trae un archivo requirements.txt por lo que debes saltarte el paso de escribir tus propios requirements y solo ejecutar `pip install -r requirements.txt`.
+ 
+3. Ejecuta `python manage.py migrate` para actualizar la base de datos. 
+4. Ejecuta `python manage.py runserver` para correr un servidor en tu computador. 
+5. En tu navegador ingresa a _127.0.0.1:8000_ y verás tu app funcionando. 
