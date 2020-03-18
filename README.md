@@ -33,10 +33,10 @@ En este paso cada integrante del grupo hará un cambio en el proyecto, que no af
 
     ```python
         if "taskDelete" in request.POST: #checking if there is a request to delete a todo
-        checkedlist = request.POST["checkedbox"] #checked todos to be deleted
-        for todo_id in checkedlist:
-            todo = TodoList.objects.get(id=int(todo_id)) #getting todo id
-            todo.delete() #deleting todo
+            checkedlist = request.POST["checkedbox"] #checked todos to be deleted
+            for todo_id in checkedlist:
+                todo = TodoList.objects.get(id=int(todo_id)) #getting todo id
+                todo.delete() #deleting todo
 
    ```
 
